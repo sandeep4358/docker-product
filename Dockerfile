@@ -1,5 +1,5 @@
 # Use the AdoptOpenJDK 17 JRE image
-FROM adoptopenjdk:17-jre-hotspot
+FROM amazoncorretto:17.0.0-alpine
 
 ADD target/*.jar app.jar
 
