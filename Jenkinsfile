@@ -24,7 +24,7 @@ pipeline{
                                                  sh 'docker image build -t sandeep022/practice-product:${BUILD_NUMBER} .'
                                               //for a time being as it push to docker hub take time I am commenting that
 
-                                              sh 'docker push sandeep022/practice-product:${BUILD_NUMBER}'
+                                              //sh 'docker push sandeep022/practice-product:${BUILD_NUMBER}'
                                              }
                     }
                 }
