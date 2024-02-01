@@ -5,7 +5,7 @@ pipeline{
         stage('SCM'){
             steps{
                 echo ' getting code from the git repository'
-                git changelog: false, poll: false, url: 'https://github.com/sandeep4358/ServiceRegistory.git'
+                git changelog: false, poll: false, url: 'https://github.com/sandeep4358/docker-product.git'
             }
         }
 
@@ -24,24 +24,13 @@ pipeline{
                                                  sh 'docker image build -t sandeep022/practice-product:${BUILD_NUMBER} .'
                                               //for a time being as it push to docker hub take time I am commenting that
 
-                                              //  sh 'docker push sandeep022/practice-product:${BUILD_NUMBER}'
+                                              sh 'docker push sandeep022/practice-product:${BUILD_NUMBER}'
                                              }
                     }
                 }
 		}
 
-		stage('Docker Image Run '){
-                steps{
-                    echo 'Image Run'
-                    script{
-                                                 // some block
-												 //sh 'docker container rm -f practice-product'
 
-                                                 sh 'docker run --network=ska -dit --name practice-product{BUILD_NUMBER} -p 8761:8761 sandeep022/practice-product:${BUILD_NUMBER}'
-
-                    }
-                }
-		}
 
 }
 
