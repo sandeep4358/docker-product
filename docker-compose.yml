@@ -2,7 +2,7 @@ version: '3'
 services:
   practice-product:
     #container_name: practice-product
-    image:  practice-product
+    image:  sandeep022/practice-product:5
     ports:
       - 9001-9030:8080
     environment:
@@ -15,7 +15,7 @@ services:
 
   ska-mysqldb:
     container_name: ska-mysqldb
-    image: mysql:5.7
+    image: mysql
     ports:
         - 3307:3306
     environment:
