@@ -18,5 +18,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+eureka:
+  client:
+    serviceUrl:
+      # Location of your eureka server
+      defaultZone: http://service-registory16:8761/eureka
+
 
 
