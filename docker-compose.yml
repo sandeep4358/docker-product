@@ -1,8 +1,22 @@
 version: '3'
 services:
+  ska-mysqldb:
+    container_name: ska-mysqldb
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: testdb
+      MYSQL_ROOT_PASSWORD: root
+
   practice-product:
     #container_name: practice-product
-    image:  sandeep022/practice-product:9
+    image:  sandeep022/practice-product:11
+    depends_on:
+      - ska-mysqldb
+    restart: on-failure
+    volumes:
+      - /home/user/Desktop/db:/var/lib/mysql
     ports:
       - 9001-9030:8081
     environment:
@@ -10,16 +24,8 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
       MYSQL_PORT: 3306
-    depends_on:
-      -  ska-mysqldb
 
-  ska-mysqldb:
-    container_name: ska-mysqldb
-    image: mysql
-    ports:
-        - 3307:3306
-    environment:
-      MYSQL_DATABASE: testdb
-      MYSQL_ROOT_PASSWORD: root
+
+
 
 
