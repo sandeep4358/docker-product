@@ -2,9 +2,9 @@ version: '3'
 services:
   practice-product:
     #container_name: practice-product
-    image:  sandeep022/practice-product:8
+    image:  sandeep022/practice-product:9
     ports:
-      - 9001-9030:8080
+      - 9001-9030:8081
     environment:
       MYSQL_HOST: ska-mysqldb
       MYSQL_USER: root

@@ -7,7 +7,7 @@ server:
 
 spring:
   application:
-    name: product-practice
+    name: product-service
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/testdb
     username: ${MYSQL_USER:laravel}
