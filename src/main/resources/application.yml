@@ -9,9 +9,9 @@ spring:
   application:
     name: product-service
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/testdb
-    username: ${MYSQL_USER:laravel}
-    password: ${MYSQL_PASSWORD:laravel}
+    url: jdbc:mysql://${MYSQL_HOST:192.168.0.102}:${MYSQL_PORT:3307}/testdb
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -22,7 +22,7 @@ eureka:
   client:
     serviceUrl:
       # Location of your eureka server
-      defaultZone: http://service-registory16:8761/eureka
+      defaultZone: http://${service-registory16:192.168.0.102}:8761/eureka
 
 
 

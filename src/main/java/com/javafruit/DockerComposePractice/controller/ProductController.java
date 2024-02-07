@@ -3,6 +3,7 @@ package com.javafruit.DockerComposePractice.controller;
 // ProductController.java
 import com.javafruit.DockerComposePractice.entity.Product;
 import com.javafruit.DockerComposePractice.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
+@Slf4j
 public class ProductController {
 
     private final ProductService productService;
@@ -30,7 +32,9 @@ public class ProductController {
     }
 
     @PostMapping
+//    @CrossOrigin
     public Product createProduct(@RequestBody Product product) {
+        log.info("Product :: ",product);
         return productService.createProduct(product);
     }
 
